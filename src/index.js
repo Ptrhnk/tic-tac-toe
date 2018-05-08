@@ -23,7 +23,7 @@ class Board extends React.Component {
     } else if (this.props.squares[i] === "O") {
       return "lightpink";
     } else {
-      return "lightblue";
+      return "rgb(116, 192, 255)";
     }
   }
 
@@ -67,6 +67,8 @@ class Game extends React.Component {
       }],
       xIsNext: true,
       stepNumber: 0,
+      col: "x",
+      row: "y",
     };
   }
 
@@ -85,12 +87,16 @@ class Game extends React.Component {
       return;
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
+    let x = i % 3 + 1;
+    let y = Math.floor(i / 3 + 1);
     this.setState({
       history: history.concat([{
         squares: squares,
       }]),
       xIsNext: !this.state.xIsNext,
       stepNumber: history.length,
+      col: x,
+      row: y
     });
   }
 
@@ -100,12 +106,17 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
+      const bold = this.state.stepNumber === move ? "bold-text" : "";
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button
+          className={bold}
+          onClick={() => this.jumpTo(move)}>
+          {desc}
+          </button>
         </li>
       );
     });
@@ -126,6 +137,7 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div className="status">{status}</div>
+          <div className="status">Col: {this.state.col} Row: {this.state.row}</div>
           <ol>{moves}</ol>
         </div>
       </div>

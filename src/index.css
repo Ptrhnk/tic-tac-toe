@@ -1,6 +1,11 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
+  /* background: linear-gradient(
+  to left,
+  rgba(34, 34, 34, 1),
+  rgba(56, 56, 56, 1)); */
+  background-color: rgb(36, 34, 35);
 }
 
 ol, ul {
@@ -49,21 +54,24 @@ div {
 .game {
   display: flex;
   flex-direction: row;
-  /* border: 3px solid lightblue; */
   padding: 20px;
-  background-color: lightblue;
+  background: linear-gradient(
+  to left bottom,
+  rgb(0, 156, 255),
+  rgb(26, 169, 230));
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
+  border: 2px solid white;
+  /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); */
 }
 
 .game-board {
-  /* border: 2px solid blue; */
   padding: 10px;
-  /* background-color: hotpink; */
+  /* background-color: rgb(32, 32, 32); */
 }
 
 .game-info {
@@ -76,5 +84,4 @@ div {
   margin-bottom: 20px;
   min-width: 150px;
   font-size: 20px;
-  background-color: lightblue;
 }
