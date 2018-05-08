@@ -16,6 +16,10 @@ div {
   display: none;
 }
 
+.bold-text {
+  font-weight: bold;
+}
+
 .board-row {
   /* margin: auto; */
   /* border: 1px solid pink; */
