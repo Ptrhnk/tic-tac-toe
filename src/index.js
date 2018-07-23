@@ -34,9 +34,22 @@ class Board extends React.Component {
     color={this.chooseColor(i)} />;
   }
 
+  renderBoard() {
+    const row = [];
+    for (let i = 10; i < 18; i++) {
+      row.push(<div className="board-row">);
+      row.push(this.renderSquare(i));
+      row.push(</div>);
+    }
+    return row;
+  }
+
   render() {
     return (
       <div>
+        <div className="board-row">
+          {this.renderBoard()}
+        </div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
