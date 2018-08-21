@@ -1,11 +1,17 @@
+* {
+  margin: 0;
+  /* padding: 0; */
+  box-sizing: border-box;
+}
+
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
-  /* background: linear-gradient(
-  to left,
-  rgba(34, 34, 34, 1),
-  rgba(56, 56, 56, 1)); */
-  background-color: rgb(36, 34, 35);
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(
+  to right bottom,
+  rgba(126, 213, 111, 1),
+  rgba(40, 180, 133, 1));
 }
 
 ol, ul {
@@ -22,7 +28,6 @@ div {
 
 .board-row {
   /* margin: auto; */
-  /* border: 1px solid pink; */
   /* padding: 10px; */
 }
 
@@ -70,18 +75,22 @@ div {
   transform: translate(-50%, -50%);
   border-radius: 20px;
   border: 2px solid white;
+<<<<<<< HEAD
   /* box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); */
+=======
+>>>>>>> ptrhnk/exercises
 }
 
 .game-board {
   padding: 10px;
+<<<<<<< HEAD
   /* background-color: rgb(32, 32, 32); */
+=======
+>>>>>>> ptrhnk/exercises
 }
 
 .game-info {
-  /* background-color: lightgreen; */
   padding: 10px;
-  /* border: 2px solid green; */
 }
 
 .status {
