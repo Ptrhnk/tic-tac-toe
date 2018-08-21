@@ -18,7 +18,7 @@ function Square(props) {
 // ------------ BOARD -------------
 class Board extends React.Component {
   chooseColor(i) {
-    if(this.props.squares[i] === "X") {
+    if (this.props.squares[i] === "X") {
       return "lightgreen";
     } else if (this.props.squares[i] === "O") {
       return "lightpink";
@@ -29,6 +29,7 @@ class Board extends React.Component {
 
   renderSquare(i) {
     return <Square
+    key={i}
     value={this.props.squares[i]}
     onClick={() => this.props.onClick(i)}
     color={this.chooseColor(i)} />;
@@ -44,7 +45,6 @@ class Board extends React.Component {
       for (let i = 0; i < 3; i++) {
         rowSquares.push(this.renderSquare(index++));
       }
-      console.log(row);
       board.push(row);
     }
     return board;
